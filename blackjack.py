@@ -20,9 +20,8 @@ def main():
     # handle the player's actions
     while not player_hand.is_bust() and not player_hand.is_blackjack():
         print()
-        action = input('Hit or Stand?')
 
-        match action.lower():
+        match input('Hit or Stand?').lower():
             case 'hit' | 'h':
                 new_card = deck.draw_card_to(player_hand)
 
@@ -33,6 +32,10 @@ def main():
             case _:
                 print()
                 break
+
+    if player_hand.is_bust() or player_hand.is_blackjack():
+        print_who_won()
+        return
 
     # the dealer draws cards until his hand's worth >= 17
     while dealer_hand.value < 17:
