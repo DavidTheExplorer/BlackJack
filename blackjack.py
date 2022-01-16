@@ -11,6 +11,7 @@ dealer_hand = Hand.from_deck(deck)
 
 def main():
     print(f'Your starting hand is: {player_hand}')
+    print(f"The dealer's hand is: {dealer_hand}")
 
     if player_hand.is_blackjack() or dealer_hand.is_blackjack():
         print_who_won()
