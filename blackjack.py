@@ -12,6 +12,7 @@ dealer_hand = Hand.from_deck(deck)
 def main():
     print(f'Your starting hand is: {player_hand}')
     print(f"The dealer's hand is: {dealer_hand}")
+    print()
 
     if player_hand.is_blackjack() or dealer_hand.is_blackjack():
         print_who_won()
@@ -19,7 +20,6 @@ def main():
 
     # handle the player's actions
     while not player_hand.is_bust() and not player_hand.is_blackjack():
-        print()
 
         match input('Hit or Stand?').lower():
             case 'hit' | 'h':
@@ -44,12 +44,11 @@ def main():
         sleep(1.2)
 
     print(f"The dealer's hand is: {dealer_hand}")
+    print()
     print_who_won()
 
 
 def print_who_won():
-    print()
-
     if player_hand.is_blackjack():
         print('You got a Blackjack and WON!')
 
@@ -60,7 +59,7 @@ def print_who_won():
         print(f'You lost because the dealer got a BlackJack! {dealer_hand}.')
 
     elif dealer_hand.is_bust():
-        print(f'You won because the dealer busted({dealer_hand.value} score)!')
+        print(f'You won because the dealer busted!')
 
     elif dealer_hand.value == player_hand.value:
         print(f'Draw! Both you and the dealer are worth {player_hand.value}!')
