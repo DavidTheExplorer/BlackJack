@@ -29,8 +29,8 @@ class Hand:
     def get_card_value(self, card):
         number = card.number
 
-        if isinstance(number, int):
-            return number
+        if number.isdigit():
+            return int(number)
 
         if number in PICTURE_NUMBERS:
             return 10
