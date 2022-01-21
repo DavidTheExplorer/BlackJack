@@ -1,7 +1,11 @@
 from dataclasses import dataclass
 
+PICTURE_NUMBERS = ['J', 'Q', 'K']
+NUMBERS = [str(n) for n in range(2, 11)] + PICTURE_NUMBERS + ['A']
+SYMBOLS = ['♣', '♦', '♥', '♠']
 
-@dataclass  # equivalent to lombok @Data in Java
+
+@dataclass
 class Card:
     number: str
     symbol: str

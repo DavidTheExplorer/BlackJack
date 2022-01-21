@@ -1,7 +1,6 @@
 import random
 
-from Card import Card
-from constants import NUMBERS, SYMBOLS
+from Card import Card, NUMBERS, SYMBOLS
 
 
 class Deck:
