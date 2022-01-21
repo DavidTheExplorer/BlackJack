@@ -1,4 +1,4 @@
-from constants import PICTURE_NUMBERS
+from Card import PICTURE_NUMBERS
 
 
 class Hand:
