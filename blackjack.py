@@ -49,14 +49,14 @@ def main():
 
 
 def print_who_won():
-    if player_hand.is_blackjack():
+    if dealer_hand.is_blackjack():
+        print(f'You lost because the dealer got a BlackJack! {dealer_hand}.')
+
+    elif player_hand.is_blackjack():
         print('You got a Blackjack and WON!')
 
     elif player_hand.is_bust():
         print(f'You lost because your hand is worth {player_hand.value}.')
-
-    elif dealer_hand.is_blackjack():
-        print(f'You lost because the dealer got a BlackJack! {dealer_hand}.')
 
     elif dealer_hand.is_bust():
         print(f'You won because the dealer busted!')
